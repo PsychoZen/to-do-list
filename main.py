@@ -1,30 +1,3 @@
-
-def print_menu(choices):
-    for index, choice in enumerate(choices, start=1):
-        print(f"{index}. {choice}")
-    choices_list = ["Option 1"], ["Option 2"], ["Option 3"]
-    print("Please select one or more options from the list you want to remove")
-    print_menu(choices_list)
-    selected_options = []
-    while True:
-        user_input = input("Enter the number(s) of the option you would like to select (or, 'done' if you are finished with the selection interface): ") 
-        if user_input.lower() == 'done':
-            break
-        try:
-            option_index = int(user_input) - 1
-            if 0 <= option_index < len(choices_list):
-              selected_options.append(choices_list[option_index])
-            else:
-              print("Invalid option number. Try again.")
-        except ValueError:
-            print("Invalid input. Enter a number or 'done'.")
-    if selected_options:
-        print("You selected the following options:")
-        for option in selected_options:
-            print(option)
-    else:
-        print("No option selected")
-
 task_list = ["Vacuum", "Clean Windows", "Spray Poison"]
 def menu():
     print("To-Do-List Menu")
